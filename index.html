@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calorie Calculator</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
@@ -16,7 +16,7 @@
             transition: color 0.3s;
         }
         .social-icon:hover {
-            color: #25D366; /* WhatsApp green */
+            color: #25D366;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -81,22 +81,57 @@
 
         <div id="results" class="hidden mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 space-y-4">
             <h2 class="text-xl font-semibold text-green-600">Results:</h2>
-            <div id="bmr" class=""><span class="font-semibold">Basal Metabolic Rate (BMR):</span> <span class="text-gray-800"></span></div>
-            <div id="dailyCalories" class=""><span class="font-semibold">Daily Calories for Maintenance:</span> <span class="text-gray-800"></span></div>
-            <div id="lossCalories" class=""><span class="font-semibold">Daily Calories for Weight Loss:</span> <span class="text-gray-800"></span></div>
-            <div id="weeklyLoss" class=""><span class="font-semibold">Expected Weekly Weight Loss:</span> <span class="text-gray-800"></span></div>
+            <div id="bmr" class="">
+                <span class="font-semibold">Basal Metabolic Rate (BMR):</span>
+                <span class="text-gray-800"></span>
+            </div>
+            <div id="dailyCalories" class="">
+                <span class="font-semibold">Daily Calories for Maintenance:</span>
+                <span class="text-gray-800"></span>
+            </div>
+            <div id="lossCalories" class="">
+                <span class="font-semibold">Daily Calories for Weight Loss:</span>
+                <span class="text-gray-800"></span>
+            </div>
+            <div id="weeklyLoss" class="">
+                <span class="font-semibold">Expected Weekly Weight Loss:</span>
+                <span class="text-gray-800"></span>
+            </div>
 
             <h3 class="text-lg font-semibold text-blue-600">Macronutrient Breakdown (Weight Loss):</h3>
-            <div id="protein" class=""><span class="font-semibold">Protein:</span> <span class="text-gray-800"></span></div>
-            <div id="carbs" class=""><span class="font-semibold">Carbs:</span> <span class="text-gray-800"></span></div>
-            <div id="fat" class=""><span class="font-semibold">Fat:</span> <span class="text-gray-800"></span></div>
+            <div id="protein" class="">
+                <span class="font-semibold">
+                    <i class="fas fa-drumstick-bite mr-2"></i>
+                    <span class="align-middle">Protein:</span>
+                </span>
+                <span class="text-gray-800"> (e.g., chicken, fish)</span>
+                <span class="text-gray-800 macronutrient-value"></span>
+            </div>
+            <div id="carbs" class="">
+                <span class="font-semibold">
+                    <i class="fas fa-bread-slice mr-2"></i>
+                    <span class="align-middle">Carbs:</span>
+                </span>
+                <span class="text-gray-800"> (e.g., rice, pasta)</span>
+                <span class="text-gray-800 macronutrient-value"></span>
+            </div>
+            <div id="fat" class="">
+                <span class="font-semibold">
+                    <i class="fas fa-utensil-spoon mr-2"></i>
+                    <span class="align-middle">Fat:</span>
+                </span>
+                <span class="text-gray-800"> (e.g., avocado, nuts)</span>
+                <span class="text-gray-800 macronutrient-value"></span>
+            </div>
 
             <h3 class="text-lg font-semibold text-purple-600">Exercise Recommendation (Weight Loss):</h3>
-            <div id="exerciseCaloriesBurn" class=""><span class="font-semibold">Calories to Burn per Day:</span> <span class="text-gray-800"></span></div>
+            <div id="exerciseCaloriesBurn" class="">
+                <span class="font-semibold">Calories to Burn per Day:</span>
+                <span class="text-gray-800"></span>
+            </div>
             <p class="text-gray-500 text-sm">
                 *This is a general recommendation. Consult a fitness professional for a tailored exercise plan.
             </p>
-
             <p class="text-gray-500 text-sm mt-4">
                 Please note that these are estimated values. Consult a healthcare professional or registered dietitian for personalized advice.
             </p>
@@ -104,31 +139,28 @@
     </div>
     
     <footer class="bg-gray-800 text-white py-4 mt-8">
-    <div class="max-w-2xl mx-auto text-center">
-        <p class="text-lg font-semibold">Train with the Best!</p>
-        <p class="mt-2">Contact Aqeeb Baig for personalized gym training sessions.</p>
-        <div class="mt-4 flex justify-center space-x-6">
-            <!-- WhatsApp -->
-            <p class="mt-1">
-                WhatsApp: +92 306 0670473</a>
-                <a href="https://wa.me/923060670473" target="_blank" rel="noopener noreferrer" class="social-icon">
-                    <i class="fab fa-whatsapp"></i>
+        <div class="max-w-2xl mx-auto text-center">
+            <p class="text-lg font-semibold">Train with the Best!</p>
+            <p class="mt-2">Contact Aqeeb Baig for personalized gym training sessions.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <p class="mt-1">
+                    WhatsApp: +92 306 0670473
+                    <a href="https://wa.me/923060670473" target="_blank" rel="noopener noreferrer" class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </p>
+                <a href="https://www.instagram.com/aqeeb_01/" target="_blank" rel="noopener noreferrer" class="text-pink-500 hover:text-pink-400">
+                    <i class="fab fa-instagram fa-2x"></i>
                 </a>
+                <a href="https://www.tiktok.com/@aqeeb.natural" target="_blank" rel="noopener noreferrer" class="text-black hover:text-gray-700">
+                    <i class="fab fa-tiktok fa-2x"></i>
+                </a>
+            </div>
+            <p class="mt-6 text-sm text-gray-400">
+                Developed by <a href="https://github.com/Burnaviour" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Burnaviour</a>
             </p>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/aqeeb_01/" target="_blank" rel="noopener noreferrer" class="text-pink-500 hover:text-pink-400">
-                <i class="fab fa-instagram fa-2x"></i>
-            </a>
-            <!-- TikTok -->
-            <a href="https://www.tiktok.com/@aqeeb.natural" target="_blank" rel="noopener noreferrer" class="text-black hover:text-gray-700">
-                <i class="fab fa-tiktok fa-2x"></i>
-            </a>
         </div>
-        <p class="mt-6 text-sm text-gray-400">
-            Developed by <a href="https://github.com/Burnaviour" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Burnaviour</a>
-        </p>
-    </div>
-</footer>
+    </footer>
 
     <script>
 document.getElementById('calorieForm').addEventListener('submit', function (e) {
@@ -137,7 +169,7 @@ document.getElementById('calorieForm').addEventListener('submit', function (e) {
     // Reset error messages
     const errorFields = ['age', 'feet', 'inches', 'weight', 'loss'];
     errorFields.forEach(id => document.getElementById(`${id}-error`).style.display = 'none');
-    const MAX_SAFE_LOSS_KG = 1; // Maximum safe weight loss per week in kilograms
+    const MAX_SAFE_LOSS_KG = 1;
 
     // Get input values
     const gender = document.getElementById('gender').value;
@@ -147,17 +179,15 @@ document.getElementById('calorieForm').addEventListener('submit', function (e) {
     const weight = parseFloat(document.getElementById('weight').value);
     const activity = parseFloat(document.getElementById('activity').value);
     const loss = parseFloat(document.getElementById('loss').value);
-    
-  
+
     // Validate inputs
     let hasErrors = false;
 
-  if (isNaN(loss) || loss <= 0 || loss > MAX_SAFE_LOSS_KG) {
+    if (isNaN(loss) || loss <= 0 || loss > MAX_SAFE_LOSS_KG) {
         document.getElementById('loss-error').textContent = `Please enter a realistic weight loss goal (up to ${MAX_SAFE_LOSS_KG} kg per week).`;
         document.getElementById('loss-error').style.display = 'block';
         hasErrors = true;
     }
-
     if (isNaN(age) || age <= 0) {
         document.getElementById('age-error').textContent = 'Please enter a valid age.';
         document.getElementById('age-error').style.display = 'block';
@@ -198,36 +228,36 @@ document.getElementById('calorieForm').addEventListener('submit', function (e) {
 
     // Calculate daily calorie deficit for weight loss
     let lossCalories = dailyCalories - (loss * 7700 / 7);
-    lossCalories = Math.max(lossCalories, 1200); // Ensure it doesn't go too low
+    lossCalories = Math.max(lossCalories, 1200);
 
-    // Macronutrient breakdown (example: 40% carbs, 30% protein, 30% fat)
+    // Macronutrient breakdown
     const proteinGrams = (lossCalories * 0.30) / 4;
     const carbGrams = (lossCalories * 0.40) / 4;
     const fatGrams = (lossCalories * 0.30) / 9;
 
-    // ✅ Dynamically calculate exercise calories to burn per day
+    // Exercise calories
     const exerciseCaloriesBurn = (loss * 7700) / 7;
 
     // Display results
-    if (hasErrors) {
-    document.getElementById('results').classList.add('hidden');
-    return;
-}
-
     document.getElementById('bmr').querySelector('span:last-child').textContent = `${bmr.toFixed(2)} calories`;
     document.getElementById('dailyCalories').querySelector('span:last-child').textContent = `${dailyCalories.toFixed(2)} calories`;
     document.getElementById('lossCalories').querySelector('span:last-child').textContent = `${lossCalories.toFixed(2)} calories`;
     document.getElementById('weeklyLoss').querySelector('span:last-child').textContent = `${loss.toFixed(2)} kg`;
 
-    document.getElementById('protein').querySelector('span:last-child').textContent = `${proteinGrams.toFixed(2)} grams`;
-    document.getElementById('carbs').querySelector('span:last-child').textContent = `${carbGrams.toFixed(2)} grams`;
-    document.getElementById('fat').querySelector('span:last-child').textContent = `${fatGrams.toFixed(2)} grams`;
+    const proteinDisplay = document.getElementById('protein').querySelector('.text-gray-800:last-child');
+    proteinDisplay.textContent = ` ${proteinGrams.toFixed(2)} grams`;
+
+    const carbsDisplay = document.getElementById('carbs').querySelector('.text-gray-800:last-child');
+    carbsDisplay.textContent = ` ${carbGrams.toFixed(2)} grams`;
+
+    const fatDisplay = document.getElementById('fat').querySelector('.text-gray-800:last-child');
+    fatDisplay.textContent = ` ${fatGrams.toFixed(2)} grams`;
+
 
     document.getElementById('exerciseCaloriesBurn').querySelector('span:last-child').textContent = `${exerciseCaloriesBurn.toFixed(2)} calories`;
 
     document.getElementById('results').classList.remove('hidden');
 });
-
     </script>
 </body>
 </html>
