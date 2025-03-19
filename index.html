@@ -98,6 +98,7 @@ document.getElementById('calorieForm').addEventListener('submit', function (e) {
     // Reset error messages
     const errorFields = ['age', 'feet', 'inches', 'weight', 'loss'];
     errorFields.forEach(id => document.getElementById(`${id}-error`).style.display = 'none');
+    const MAX_SAFE_LOSS_KG = 1; // Maximum safe weight loss per week in kilograms
 
     // Get input values
     const gender = document.getElementById('gender').value;
@@ -107,9 +108,17 @@ document.getElementById('calorieForm').addEventListener('submit', function (e) {
     const weight = parseFloat(document.getElementById('weight').value);
     const activity = parseFloat(document.getElementById('activity').value);
     const loss = parseFloat(document.getElementById('loss').value);
-
+    
+  
     // Validate inputs
     let hasErrors = false;
+
+  if (isNaN(loss) || loss <= 0 || loss > MAX_SAFE_LOSS_KG) {
+        document.getElementById('loss-error').textContent = `Please enter a realistic weight loss goal (up to ${MAX_SAFE_LOSS_KG} kg per week).`;
+        document.getElementById('loss-error').style.display = 'block';
+        hasErrors = true;
+    }
+
     if (isNaN(age) || age <= 0) {
         document.getElementById('age-error').textContent = 'Please enter a valid age.';
         document.getElementById('age-error').style.display = 'block';
@@ -161,6 +170,11 @@ document.getElementById('calorieForm').addEventListener('submit', function (e) {
     const exerciseCaloriesBurn = (loss * 7700) / 7;
 
     // Display results
+    if (hasErrors) {
+    document.getElementById('results').classList.add('hidden');
+    return;
+}
+
     document.getElementById('bmr').querySelector('span:last-child').textContent = `${bmr.toFixed(2)} calories`;
     document.getElementById('dailyCalories').querySelector('span:last-child').textContent = `${dailyCalories.toFixed(2)} calories`;
     document.getElementById('lossCalories').querySelector('span:last-child').textContent = `${lossCalories.toFixed(2)} calories`;
