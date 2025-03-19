@@ -92,7 +92,7 @@
     </div>
 
     <script>
-  document.getElementById('calorieForm').addEventListener('submit', function (e) {
+document.getElementById('calorieForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
     // Reset error messages
@@ -156,7 +156,9 @@
     const proteinGrams = (lossCalories * 0.30) / 4;
     const carbGrams = (lossCalories * 0.40) / 4;
     const fatGrams = (lossCalories * 0.30) / 9;
-    const exerciseCaloriesBurn = 350;
+
+    // ✅ Dynamically calculate exercise calories to burn per day
+    const exerciseCaloriesBurn = (loss * 7700) / 7;
 
     // Display results
     document.getElementById('bmr').querySelector('span:last-child').textContent = `${bmr.toFixed(2)} calories`;
@@ -168,7 +170,7 @@
     document.getElementById('carbs').querySelector('span:last-child').textContent = `${carbGrams.toFixed(2)} grams`;
     document.getElementById('fat').querySelector('span:last-child').textContent = `${fatGrams.toFixed(2)} grams`;
 
-    document.getElementById('exerciseCaloriesBurn').querySelector('span:last-child').textContent = `${exerciseCaloriesBurn} calories`;
+    document.getElementById('exerciseCaloriesBurn').querySelector('span:last-child').textContent = `${exerciseCaloriesBurn.toFixed(2)} calories`;
 
     document.getElementById('results').classList.remove('hidden');
 });
